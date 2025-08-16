@@ -1,7 +1,6 @@
 import { IconButton, Tooltip } from '@mui/material'
 import DarkModeIcon from '@mui/icons-material/DarkMode'
 import LightModeIcon from '@mui/icons-material/LightMode'
-import React from 'react'
 import { useTheme } from '@mui/material/styles'
 
 // A tiny helper that expects theme to change via document event.

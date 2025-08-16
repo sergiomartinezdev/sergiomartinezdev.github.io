@@ -15,7 +15,7 @@ const nav = [
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   // Keep theme state here so ThemeToggle can flip it by event
-  const { theme, mode, setMode } = useAppTheme()
+  const { theme, setMode } = useAppTheme()
 
   React.useEffect(() => {
     const handler = () => setMode(prev => (prev === 'light' ? 'dark' : 'light'))
@@ -40,7 +40,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 to={n.to}
                 underline="none"
                 color="inherit"
-                style={({ isActive }) => ({ fontWeight: isActive ? 700 : 500 })}
+                sx={{
+                  fontWeight: 500,
+                  '&[aria-current="page"]': { fontWeight: 700 },
+                }}
               >
                 {n.label}
               </MLink>
